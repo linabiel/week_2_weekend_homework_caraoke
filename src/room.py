@@ -7,7 +7,12 @@ class Room:
         self.room_capacity = []
 
     def add_guest(self, guest):
-        self.room_capacity.append(guest)
+        return self.room_capacity.append(guest)
 
     def remove_guest(self, guest):
-        self.room_capacity.remove(guest)
+        return self.room_capacity.remove(guest)
+
+    def clear_room(self):
+        return self.room_capacity.clear()
+
+    
