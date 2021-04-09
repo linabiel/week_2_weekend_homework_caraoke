@@ -5,6 +5,7 @@ class Room:
         self.entry_fee = entry_fee
         self.till = till
         self.room_capacity = []
+        self.playlist = []
 
     def add_guest(self, guest):
         return self.room_capacity.append(guest)
@@ -14,5 +15,8 @@ class Room:
 
     def clear_room(self):
         return self.room_capacity.clear()
+
+    def add_song(self, song):
+        return self.playlist.append(song)
 
     
