@@ -31,9 +31,13 @@ class TestRoom(unittest.TestCase):
         self.room_small.add_song(self.hurt)
         self.assertEqual(1, len(self.room_small.playlist))
 
+    def test_check_spaces_taken(self):
+        self.room_large.add_guest(self.ann)
+        self.room_large.add_guest(self.bob) 
+        self.assertEqual(2, self.room_large.spaces_taken())
+        
     def test_check_is_free_space(self):
         self.room_large.add_guest(self.ann)
         self.room_large.add_guest(self.bob)
-        spaces_taken = len(self.room_large.room_capacity)
-        free_space = self.room_large.capacity - spaces_taken 
-        self.assertEqual(3, free_space)
+        print(self.room_large.free_space)
+        # self.assertEqual(3, self.room_large.free_space(spaces_taken()))
