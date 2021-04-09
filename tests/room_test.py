@@ -34,10 +34,9 @@ class TestRoom(unittest.TestCase):
     def test_check_spaces_taken(self):
         self.room_large.add_guest(self.ann)
         self.room_large.add_guest(self.bob) 
-        self.assertEqual(2, self.room_large.spaces_taken())
+        self.assertEqual(2, self.room_large.get_spaces_taken())
         
     def test_check_is_free_space(self):
         self.room_large.add_guest(self.ann)
         self.room_large.add_guest(self.bob)
-        print(self.room_large.free_space)
-        # self.assertEqual(3, self.room_large.free_space(spaces_taken()))
+        self.assertEqual(3, self.room_large.get_free_space_count())

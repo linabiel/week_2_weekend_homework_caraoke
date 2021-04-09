@@ -8,19 +8,22 @@ class Room:
         self.playlist = []
 
     def add_guest(self, guest):
-        return self.room_capacity.append(guest)
+        self.room_capacity.append(guest)
 
     def remove_guest(self, guest):
-        return self.room_capacity.remove(guest)
+        self.room_capacity.remove(guest)
 
     def clear_room(self):
-        return self.room_capacity.clear()
+        self.room_capacity.clear()
 
     def add_song(self, song):
-        return self.playlist.append(song)
+        self.playlist.append(song)
+        #  return is not needed because 
 
-    def spaces_taken(self):
+    def get_spaces_taken(self):
         return len(self.room_capacity)
+        # return is needed because I am returning a value, not changing a value
+        # without the return the len is not used (redundant)
 
-    def free_space(self):
-        return self.capacity - spaces_taken()
+    def get_free_space_count(self):
+        return self.capacity - self.get_spaces_taken()
