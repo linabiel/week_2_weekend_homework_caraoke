@@ -12,10 +12,7 @@ class TestRoom(unittest.TestCase):
         self.song_3 = Song("Julie London", "Cry Me a River")
         self.room_small = Room(2, 15, 100)
         self.room_large = Room(5, 25, 150)
-        self.ann = Guest("Ann", 350, {
-            "artist": "Nine Inch Nails",
-            "title": "Closer"
-        })
+        self.ann = Guest("Ann", 350, self.song_1)
         self.bob = Guest("Bob", 350, self.song_2)
         self.john = Guest("John", 10, self.song_3)
 
