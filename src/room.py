@@ -1,3 +1,6 @@
+from src.song import Song
+
+
 class Room:
 
     def __init__(self, capacity, entry_fee, till):
@@ -22,7 +25,6 @@ class Room:
 
     def add_song(self, song):
         self.playlist.append(song)
-        #  return is not needed because 
 
     def get_spaces_taken(self):
         return len(self.room_capacity)
@@ -37,5 +39,3 @@ class Room:
             guest.remove_money_from_wallet()
             self.till += self.entry_fee
         return "You don't have enough money"
-
-    
