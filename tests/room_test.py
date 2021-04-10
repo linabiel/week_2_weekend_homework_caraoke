@@ -10,7 +10,7 @@ class TestRoom(unittest.TestCase):
         self.room_large = Room (5, 25, 150)
         self.ann = Guest("Ann", 350)
         self.bob = Guest("Bob", 350)
-        self.john = Guest("John", 350)
+        self.john = Guest("John", 10)
         self.closer = Song("Closer")
         self.hurt = Song("Hurt")
 
@@ -46,5 +46,7 @@ class TestRoom(unittest.TestCase):
         self.room_small.add_guest(self.ann)
         self.room_small.add_guest(self.bob)
         self.assertEqual("Room is full.", self.room_small.add_guest(self.john))
-
-
+    
+    def test_guest_can_pay_entree_fee(self):
+        self.assertEqual(335, self.ann.remove_money_from_wallet(self.room_small.entry_fee))
+        self.assertEqual("You don't have enough money", self.john.remove_money_from_wallet(self.room_small.entry_fee))

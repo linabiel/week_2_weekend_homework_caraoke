@@ -32,4 +32,10 @@ class Room:
     def get_free_space_count(self):
         return self.capacity - self.get_spaces_taken()
 
+    def pay_entry_fee(self, guest):
+        if guest.wallet >= self.add_guest:
+            guest.remove_money_from_wallet()
+            self.till += self.entry_fee
+        return "You don't have enough money"
+
     
