@@ -8,7 +8,11 @@ class Room:
         self.playlist = []
 
     def add_guest(self, guest):
-        self.room_capacity.append(guest)
+        spaces_taken = self.get_spaces_taken()
+        free_space_taken = self.get_free_space_count()
+        if spaces_taken <= free_space_taken:
+            self.room_capacity.append(guest)
+        return "Room is full."
 
     def remove_guest(self, guest):
         self.room_capacity.remove(guest)
@@ -27,3 +31,5 @@ class Room:
 
     def get_free_space_count(self):
         return self.capacity - self.get_spaces_taken()
+
+    
