@@ -1,6 +1,3 @@
-from src.song import Song
-
-
 class Room:
 
     def __init__(self, capacity, entry_fee, till):
@@ -35,7 +32,9 @@ class Room:
         return self.capacity - self.get_spaces_taken()
 
     def pay_entry_fee(self, guest):
-        if guest.wallet >= self.add_guest:
-            guest.remove_money_from_wallet()
+        if guest.wallet >= self.entry_fee:
+            guest.remove_money_from_wallet(self.entry_fee)
             self.till += self.entry_fee
-        return "You don't have enough money"
+            return self.till
+        else:
+            return "You don't have enough money"

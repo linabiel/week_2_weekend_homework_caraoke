@@ -63,3 +63,6 @@ class TestRoom(unittest.TestCase):
     def test_check_if_playlist_no_fav_song(self):
         self.room_small.add_song(self.song_1)
         self.assertEqual("Search for fav song failed.", self.bob.find_favourite_song(self.room_small.playlist))
+
+    def test_check_money_added_to_till(self):
+        self.assertEqual(175, self.room_large.pay_entry_fee(self.bob))
