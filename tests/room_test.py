@@ -47,6 +47,7 @@ class TestRoom(unittest.TestCase):
     def test_not_add_if_no_free_space(self):
         self.room_small.add_guest(self.ann)
         self.room_small.add_guest(self.bob)
+
         self.assertEqual("Room is full.", self.room_small.add_guest(self.john))
 
     def test_guest_can_pay_entree_fee(self):
